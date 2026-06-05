@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Iffat Shaikh | Data Analyst Portfolio — Insights & Impact</title>
+  <!-- Google Fonts + Font Awesome 6 -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #fbfeff;
+      color: #162b32;
+      scroll-behavior: smooth;
+      line-height: 1.5;
+    }
+
+    /* modern gradient accents */
+    :root {
+      --primary-deep: #0f2f3a;
+      --accent-teal: #1f8a7c;
+      --accent-teal-light: #e0f2ef;
+      --accent-gold: #e8b86b;
+      --gray-soft: #f5f9fe;
+      --shadow-sm: 0 20px 35px -12px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0,0,0,0.02);
+      --shadow-hover: 0 30px 40px -18px rgba(0, 108, 98, 0.2);
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* glassmorphism navbar */
+    .navbar {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(16px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(31, 138, 124, 0.2);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.02);
+    }
+    .nav-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.9rem 0;
+      flex-wrap: wrap;
+    }
+    .logo {
+      font-weight: 800;
+      font-size: 1.7rem;
+      letter-spacing: -0.02em;
+      background: linear-gradient(130deg, #0f2f3a, #1f8a7c, #e8b86b);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      transition: all 0.2s;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #1e4857;
+      transition: 0.2s;
+      font-size: 0.95rem;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0%;
+      height: 2.5px;
+      background: #1f8a7c;
+      transition: 0.3s;
+      border-radius: 4px;
+    }
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+    .nav-links a:hover {
+      color: #1f8a7c;
+    }
+
+    /* hero section elevated */
+    .hero {
+      padding: 3rem 0 2rem 0;
+      position: relative;
+    }
+    .hero-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .hero-content {
+      flex: 1.3;
+    }
+    .hero-badge {
+      background: linear-gradient(120deg, #e0f2ef, #fff0e0);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0.35rem 1.2rem;
+      border-radius: 60px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #1f6e62;
+      margin-bottom: 1.2rem;
+      border: 1px solid rgba(31,138,124,0.25);
+    }
+    .hero-content h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.2;
+      background: linear-gradient(to right, #134755, #1f8a7c, #e8b86b);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 0.8rem;
+    }
+    .hero-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #2a6b6b;
+      margin-bottom: 1rem;
+      letter-spacing: -0.2px;
+    }
+    .hero-desc {
+      color: #2b4f5c;
+      margin-bottom: 1.8rem;
+      max-width: 90%;
+      font-weight: 500;
+      border-left: 3px solid #e8b86b;
+      padding-left: 1rem;
+    }
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin: 1.8rem 0;
+    }
+    .contact-info a {
+      text-decoration: none;
+      color: #1c4453;
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: white;
+      padding: 0.45rem 1.2rem;
+      border-radius: 60px;
+      transition: all 0.25s;
+      border: 1px solid #dfe9f0;
+      font-weight: 500;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+    }
+    .contact-info a i {
+      color: #1f8a7c;
+      font-size: 0.9rem;
+    }
+    .contact-info a:hover {
+      background: #1f8a7c;
+      border-color: #1f8a7c;
+      color: white;
+      transform: translateY(-3px);
+    }
+    .contact-info a:hover i {
+      color: white;
+    }
+    .hero-stats {
+      flex: 0.9;
+      background: linear-gradient(135deg, #ffffff, #fefaf5);
+      border-radius: 2rem;
+      padding: 2rem 1.8rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(31,138,124,0.2);
+      backdrop-filter: blur(2px);
+    }
+    .stat-item {
+      margin-bottom: 1.5rem;
+    }
+    .stat-number {
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: #1f8a7c;
+      letter-spacing: -0.3px;
+    }
+    hr {
+      margin: 1rem 0;
+      border-color: #e0ede8;
+    }
+
+    /* section style modern */
+    .section {
+      padding: 4rem 0;
+      border-bottom: 1px solid #ecf3f0;
+    }
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2.5rem;
+      letter-spacing: -0.3px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-title i {
+      color: #e8b86b;
+      font-size: 1.8rem;
+    }
+
+    /* cards with gradient borders */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+      gap: 2rem;
+      margin-top: 0.5rem;
+    }
+    .project-card, .cert-card {
+      background: white;
+      border-radius: 28px;
+      padding: 1.8rem;
+      transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+      border: 1px solid #e8f0ed;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+      position: relative;
+      overflow: hidden;
+    }
+    .project-card::before, .cert-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, #1f8a7c, #e8b86b);
+      opacity: 0;
+      transition: 0.3s;
+    }
+    .project-card:hover::before, .cert-card:hover::before {
+      opacity: 1;
+    }
+    .project-card:hover, .cert-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-hover);
+      border-color: #cbdfd9;
+    }
+    .project-icon {
+      font-size: 2.3rem;
+      background: #e0f2ef30;
+      width: 55px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px;
+      color: #1f8a7c;
+      margin-bottom: 1.2rem;
+    }
+    .project-card h3, .cert-card h3 {
+      font-size: 1.45rem;
+      margin-bottom: 0.3rem;
+      font-weight: 700;
+    }
+    .project-meta {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: #e8b86b;
+      margin-bottom: 0.9rem;
+      letter-spacing: 0.4px;
+    }
+    .tech-badge {
+      background: #f0f6f4;
+      padding: 0.25rem 0.9rem;
+      border-radius: 40px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      margin-right: 0.5rem;
+      margin-top: 0.7rem;
+      display: inline-block;
+      color: #1c5e55;
+    }
+    .skill-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin: 1rem 0;
+    }
+    .skill-tag {
+      background: white;
+      border: 1px solid #cde2dc;
+      padding: 0.45rem 1.1rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      transition: 0.2s;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+    }
+    .skill-tag i {
+      margin-right: 6px;
+      color: #e8b86b;
+    }
+    .skill-tag:hover {
+      border-color: #1f8a7c;
+      background: #f9fefc;
+      transform: scale(1.02);
+    }
+    .edu-card {
+      background: linear-gradient(145deg, #ffffff, #fafefc);
+      border-radius: 28px;
+      padding: 1.5rem 2rem;
+      border-left: 7px solid #e8b86b;
+      box-shadow: var(--shadow-sm);
+    }
+    .soft-skill-item {
+      background: #eef7f4;
+      border-radius: 60px;
+      padding: 0.4rem 1.2rem;
+      font-weight: 600;
+      display: inline-block;
+    }
+    footer {
+      background: #0d2b2f;
+      color: #d2e6e0;
+      padding: 2.5rem 0;
+      text-align: center;
+    }
+    .btn-glow {
+      background: linear-gradient(95deg, #1f8a7c, #11685c);
+      border: none;
+      padding: 0.75rem 2rem;
+      border-radius: 60px;
+      color: white;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 0.5rem;
+      transition: 0.25s;
+      cursor: pointer;
+      box-shadow: 0 8px 18px rgba(31,138,124,0.3);
+      text-decoration: none;
+    }
+    .btn-glow:hover {
+      transform: scale(1.02);
+      background: linear-gradient(95deg, #1c9c8b, #0b5b50);
+      box-shadow: 0 12px 22px rgba(31,138,124,0.4);
+    }
+    .stats-big {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #1f8a7c;
+    }
+    @media (max-width: 780px) {
+      .hero-content h1 { font-size: 2.5rem; }
+      .container { padding: 0 20px; }
+      .nav-flex { flex-direction: column; gap: 10px; }
+    }
+    .lang-list li {
+      display: inline-block;
+      background: #f1f8f6;
+      margin: 0.4rem;
+      padding: 0.3rem 1rem;
+      border-radius: 60px;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container nav-flex">
+    <div class="logo">IFFAT SHAIKH</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#projects">Work</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#certifications">Credentials</a></li>
+      <li><a href="#contact">Connect</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <div class="container hero" id="home">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge"><i class="fas fa-chart-line"></i> DATA ANALYST | BUSINESS INTELLIGENCE</div>
+        <h1>Iffat Shaikh</h1>
+        <div class="hero-title">Turning raw data into strategic narratives</div>
+        <p class="hero-desc">Results-driven BSc Computer Science graduate (2026) with Python, SQL, Power BI & Tableau expertise — validated by Deloitte simulations. I transform complex datasets into visual stories that drive measurable business outcomes.</p>
+        <div class="contact-info">
+          <a href="mailto:iffat3782@gmail.com"><i class="fas fa-envelope"></i> iffat3782@gmail.com</a>
+          <a href="tel:+919067260476"><i class="fas fa-phone-alt"></i> +91 9067260476</a>
+          <a href="#" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          <a href="#" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+        <a href="#" id="downloadCvBtn" class="btn-glow"><i class="fas fa-file-pdf"></i> Download Portfolio CV</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item"><span class="stat-number">📊 5,000+</span><br>Sales records analyzed</div>
+        <hr>
+        <div class="stat-item"><span class="stat-number">⚡ 60%</span><br>Manual effort reduction via automation</div>
+        <hr>
+        <div class="stat-item"><span class="stat-number">🏅 Deloitte</span><br>Technology Job Simulation (Forage)</div>
+        <hr>
+        <div class="stat-item"><span class="stat-number">📈 40%</span><br>Reporting clarity improvement</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container section" id="education">
+    <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Academic excellence</h2>
+    <div class="edu-card">
+      <strong style="font-size: 1.3rem;">🎓 BSc [ECS] - Computer Science</strong><br>
+      Greenfingers College of Computers & Technology, Akluj | Punyashlok Ahilyadevi Holkar Solapur University<br>
+      <div style="margin: 12px 0 6px;">
+        <span style="background:#1f8a7c10; padding:0.2rem 1rem; border-radius:40px; font-weight:600;">First Year: 77%</span> &nbsp; 
+        <span style="background:#1f8a7c10; padding:0.2rem 1rem; border-radius:40px; font-weight:600;">Second Year: 86.56%</span>
+      </div>
+      <span><i class="far fa-calendar-alt"></i> 2023 – 2026 (Expected)</span>
+    </div>
+  </div>
+
+  <div class="container section" id="projects">
+    <h2 class="section-title"><i class="fas fa-chart-simple"></i> Featured analytics projects</h2>
+    <div class="card-grid">
+      <div class="project-card">
+        <div class="project-icon"><i class="fas fa-chart-pie"></i></div>
+        <h3>Sales & Marketing Performance Dashboard</h3>
+        <div class="project-meta">2025 · Power BI · Tableau · Python</div>
+        <p>Analyzed 5,000+ sales records across regions & time periods, built interactive multi-page dashboards identifying 3 underperforming regions causing 28% Q3 revenue drop. Delivered automated data pipelines reducing manual processing by ~60%.</p>
+        <div><span class="tech-badge">Python Pandas</span><span class="tech-badge">SQL</span><span class="tech-badge">Power BI</span><span class="tech-badge">Tableau</span></div>
+        <div style="margin-top: 12px;"><i class="fas fa-chart-line" style="color:#e8b86b;"></i> <strong>Business impact:</strong> Simulated marketing reallocation strategy.</div>
+      </div>
+      <div class="project-card">
+        <div class="project-icon"><i class="fas fa-file-excel"></i></div>
+        <h3>Excel Business Revenue Dashboard</h3>
+        <div class="project-meta">2024 · Advanced MS Excel</div>
+        <p>End-to-end revenue tracker using Pivot Tables, VLOOKUP, INDEX-MATCH, cleaned 1,200+ records with 15% inconsistencies resolved. Dynamic YoY comparison & monthly growth charts — improved reporting clarity by 40%.</p>
+        <div><span class="tech-badge">Pivot Tables</span><span class="tech-badge">INDEX-MATCH</span><span class="tech-badge">Conditional Formatting</span></div>
+        <div><i class="fas fa-users"></i> Adopted as reference template by 5+ peers.</div>
+      </div>
+      <div class="project-card">
+        <div class="project-icon"><i class="fas fa-robot"></i></div>
+        <h3>Deloitte-style Analytics Simulation</h3>
+        <div class="project-meta">EDA · Data Storytelling</div>
+        <p>Real-world data interpretation, forensic analysis, and dashboard creation using Deloitte practitioner workflows. Translated complex data into executive summaries and interactive visual mockups.</p>
+        <div><span class="tech-badge">Data Cleaning</span><span class="tech-badge">EDA</span><span class="tech-badge">Dashboard Design</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container section" id="skills">
+    <h2 class="section-title"><i class="fas fa-code"></i> Technical mastery & toolkit</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 2rem;">
+      <div style="flex:1; min-width: 220px;">
+        <h3><i class="fas fa-database"></i> Languages & Queries</h3>
+        <div class="skill-cloud"><span class="skill-tag"><i class="fab fa-python"></i> Python</span><span class="skill-tag"><i class="fas fa-database"></i> SQL</span></div>
+        <h3 style="margin-top: 1.5rem;"><i class="fas fa-chart-simple"></i> Visualization</h3>
+        <div class="skill-cloud"><span class="skill-tag"><i class="fas fa-chart-pie"></i> Power BI</span><span class="skill-tag"><i class="fas fa-chart-bar"></i> Tableau</span><span class="skill-tag"><i class="fas fa-file-excel"></i> MS Excel (Advanced)</span></div>
+        <h3 style="margin-top: 1.5rem;">Spreadsheets & Reporting</h3>
+        <div class="skill-cloud"><span class="skill-tag">MS Word</span><span class="skill-tag">Data Validation</span></div>
+      </div>
+      <div style="flex:1;">
+        <h3><i class="fas fa-chart-line"></i> Analytics Techniques</h3>
+        <div class="skill-cloud">
+          <span class="skill-tag">Data Cleaning</span><span class="skill-tag">Exploratory Data Analysis</span>
+          <span class="skill-tag">Data Visualization</span><span class="skill-tag">Dashboard Design</span><span class="skill-tag">Data Storytelling</span>
+        </div>
+        <h3 style="margin-top: 1.5rem;"><i class="fas fa-brain"></i> Soft skills & mindset</h3>
+        <div class="skill-cloud">
+          <span class="skill-tag">Analytical Thinking</span><span class="skill-tag">Attention to Detail</span><span class="skill-tag">Problem Solving</span>
+          <span class="skill-tag">Leadership</span><span class="skill-tag">Communication</span><span class="skill-tag">Time Management</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container section" id="certifications">
+    <h2 class="section-title"><i class="fas fa-award"></i> Certifications & industry simulations</h2>
+    <div class="card-grid">
+      <div class="cert-card">
+        <i class="fas fa-certificate" style="font-size: 2rem; color:#e8b86b;"></i>
+        <h3>Deloitte Australia - Technology Job Simulation</h3>
+        <p style="color:#1f8a7c; font-weight:500;">Forage · 2024</p>
+        <p>Hands-on analytics tasks: data interpretation, forensic technology analysis, practitioner-grade dashboard creation, and consulting communication frameworks.</p>
+      </div>
+      <div class="cert-card">
+        <i class="fab fa-python" style="font-size: 2rem; color:#e8b86b;"></i>
+        <h3>Python AI Development: Introduction</h3>
+        <p style="color:#1f8a7c; font-weight:500;">Infosys Springboard · 2024</p>
+        <p>Core Python for data handling, logic building, and AI-oriented problem solving — strengthened programming foundation for analytics.</p>
+      </div>
+      <div class="cert-card">
+        <i class="fas fa-chart-line" style="font-size: 2rem; color:#e8b86b;"></i>
+        <h3>Deloitte Australia - Analytics Simulation</h3>
+        <p style="color:#1f8a7c; font-weight:500;">Data Visualization & Storytelling</p>
+        <p>Real-world project simulating data-driven decision-making, KPI dashboards, and insight delivery aligned with Deloitte standards.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container section" id="contact">
+    <h2 class="section-title"><i class="fas fa-globe"></i> Languages & let's connect</h2>
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem;">
+      <div>
+        <h3><i class="fas fa-language"></i> Linguistic edge</h3>
+        <ul style="list-style: none; margin-top: 8px;">
+          <li class="soft-skill-item" style="margin: 0.3rem;">🇬🇧 English (Fluent)</li>
+          <li class="soft-skill-item" style="margin: 0.3rem;">🇮🇳 Hindi (Native)</li>
+          <li class="soft-skill-item" style="margin: 0.3rem;">🇮🇳 Marathi (Native)</li>
+          <li class="soft-skill-item" style="margin: 0.3rem;">🇩🇪 German (Basic)</li>
+        </ul>
+      </div>
+      <div>
+        <h3><i class="fas fa-map-pin"></i> Location & reach</h3>
+        <p>Solapur, Maharashtra, India</p>
+        <p><i class="fas fa-envelope"></i> iffat3782@gmail.com<br><i class="fas fa-phone-alt"></i> +91 9067260476</p>
+        <div style="margin-top: 1rem;">
+          <a href="#" style="color:#1f8a7c; font-size: 1.6rem; margin-right: 1rem;"><i class="fab fa-linkedin"></i></a>
+          <a href="#" style="color:#1f8a7c; font-size: 1.6rem;"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <div style="max-width: 260px;">
+        <h3><i class="fas fa-bullhorn"></i> Career objective</h3>
+        <p style="font-weight: 500;">Seeking a Data/Business Analyst role to drive measurable business impact through data storytelling, advanced visualization, and analytical precision.</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Iffat Shaikh — Data Intelligence Portfolio | Built with <i class="fas fa-heart" style="color: #e8b86b;"></i> from Solapur</p>
+    <p style="margin-top: 12px; font-size: 0.8rem;">Python · SQL · Power BI · Tableau · Advanced Excel · Data Storytelling for Growth</p>
+  </div>
+</footer>
+
+<script>
+  // smooth interactions + mock PDF download based on original CV
+  const downloadBtn = document.getElementById('downloadCvBtn');
+  if(downloadBtn) {
+    downloadBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      alert("✨ Your CV 'Iffat CV.pdf' is ready for download. This interactive portfolio mirrors all your achievements, projects, and Deloitte certifications. You can also use Print (Ctrl+P) to save as PDF.");
+    });
+  }
+  // smooth nav scroll
+  document.querySelectorAll('.nav-links a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      if(targetId === 'home') { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+      else {
+        const elem = document.getElementById(targetId);
+        if(elem) elem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+</body>
+</html>
