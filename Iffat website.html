@@ -381,6 +381,15 @@
       padding: 0.3rem 1rem;
       border-radius: 60px;
     }
+    .insight-badge {
+      background: #e8b86b20;
+      border-left: 3px solid #e8b86b;
+      padding: 0.5rem 0.8rem;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      margin-top: 0.8rem;
+      font-weight: 500;
+    }
   </style>
 </head>
 <body>
@@ -415,13 +424,13 @@
         <a href="#" id="downloadCvBtn" class="btn-glow"><i class="fas fa-file-pdf"></i> Download Portfolio CV</a>
       </div>
       <div class="hero-stats">
-        <div class="stat-item"><span class="stat-number">📊 5,000+</span><br>Sales records analyzed</div>
+        <div class="stat-item"><span class="stat-number">📊 15K+</span><br>Records analyzed across projects</div>
         <hr>
         <div class="stat-item"><span class="stat-number">⚡ 60%</span><br>Manual effort reduction via automation</div>
         <hr>
         <div class="stat-item"><span class="stat-number">🏅 Deloitte</span><br>Technology Job Simulation (Forage)</div>
         <hr>
-        <div class="stat-item"><span class="stat-number">📈 40%</span><br>Reporting clarity improvement</div>
+        <div class="stat-item"><span class="stat-number">🌍 100+</span><br>Countries analyzed (Addiction Study)</div>
       </div>
     </div>
   </div>
@@ -442,6 +451,23 @@
   <div class="container section" id="projects">
     <h2 class="section-title"><i class="fas fa-chart-simple"></i> Featured analytics projects</h2>
     <div class="card-grid">
+      <!-- NEW: Social Media Addiction Analysis Project -->
+      <div class="project-card">
+        <div class="project-icon"><i class="fas fa-mobile-alt"></i></div>
+        <h3>Social Media Addiction Analysis</h3>
+        <div class="project-meta">2026 · Python · SQL · Power BI</div>
+        <p>Analyzed <strong>10,000+ records</strong> across <strong>100+ global countries</strong> to uncover TikTok & Instagram addiction patterns, sleep deprivation impact, and dopamine dependency trends. Performed end-to-end EDA using Python (Pandas, Matplotlib, Seaborn) — visualized platform usage, age-wise addiction scores, and country-wise comparisons.</p>
+        <div>
+          <span class="tech-badge">Python Pandas</span>
+          <span class="tech-badge">Matplotlib/Seaborn</span>
+          <span class="tech-badge">SQL (SQLite)</span>
+          <span class="tech-badge">Power BI</span>
+        </div>
+        <div class="insight-badge">
+          <i class="fas fa-lightbulb"></i> <strong>Key insights:</strong> Wrote 5+ SQL queries extracting top addicted countries, addiction level distribution, and average sleep by addiction category. Built interactive Power BI dashboard with KPI cards, slicers, and 6+ visuals covering dopamine dependency & platform comparison.
+        </div>
+      </div>
+
       <div class="project-card">
         <div class="project-icon"><i class="fas fa-chart-pie"></i></div>
         <h3>Sales & Marketing Performance Dashboard</h3>
@@ -450,6 +476,7 @@
         <div><span class="tech-badge">Python Pandas</span><span class="tech-badge">SQL</span><span class="tech-badge">Power BI</span><span class="tech-badge">Tableau</span></div>
         <div style="margin-top: 12px;"><i class="fas fa-chart-line" style="color:#e8b86b;"></i> <strong>Business impact:</strong> Simulated marketing reallocation strategy.</div>
       </div>
+
       <div class="project-card">
         <div class="project-icon"><i class="fas fa-file-excel"></i></div>
         <h3>Excel Business Revenue Dashboard</h3>
@@ -458,6 +485,7 @@
         <div><span class="tech-badge">Pivot Tables</span><span class="tech-badge">INDEX-MATCH</span><span class="tech-badge">Conditional Formatting</span></div>
         <div><i class="fas fa-users"></i> Adopted as reference template by 5+ peers.</div>
       </div>
+
       <div class="project-card">
         <div class="project-icon"><i class="fas fa-robot"></i></div>
         <h3>Deloitte-style Analytics Simulation</h3>
@@ -473,11 +501,11 @@
     <div style="display: flex; flex-wrap: wrap; gap: 2rem;">
       <div style="flex:1; min-width: 220px;">
         <h3><i class="fas fa-database"></i> Languages & Queries</h3>
-        <div class="skill-cloud"><span class="skill-tag"><i class="fab fa-python"></i> Python</span><span class="skill-tag"><i class="fas fa-database"></i> SQL</span></div>
+        <div class="skill-cloud"><span class="skill-tag"><i class="fab fa-python"></i> Python</span><span class="skill-tag"><i class="fas fa-database"></i> SQL (SQLite, PostgreSQL)</span></div>
         <h3 style="margin-top: 1.5rem;"><i class="fas fa-chart-simple"></i> Visualization</h3>
         <div class="skill-cloud"><span class="skill-tag"><i class="fas fa-chart-pie"></i> Power BI</span><span class="skill-tag"><i class="fas fa-chart-bar"></i> Tableau</span><span class="skill-tag"><i class="fas fa-file-excel"></i> MS Excel (Advanced)</span></div>
-        <h3 style="margin-top: 1.5rem;">Spreadsheets & Reporting</h3>
-        <div class="skill-cloud"><span class="skill-tag">MS Word</span><span class="skill-tag">Data Validation</span></div>
+        <h3 style="margin-top: 1.5rem;">Python Libraries</h3>
+        <div class="skill-cloud"><span class="skill-tag">Pandas</span><span class="skill-tag">Matplotlib</span><span class="skill-tag">Seaborn</span></div>
       </div>
       <div style="flex:1;">
         <h3><i class="fas fa-chart-line"></i> Analytics Techniques</h3>
